@@ -11,13 +11,17 @@ function App (props) {
   return (
     <>
       <div className='app'>
-        <div className="logo">
-          <img src="/images/logo.png" alt="app-logo"/>
+        <div className="container">
+          <img src="/images/logo.png" alt="app-logo" className="logo"/>
         </div>
-        <div className="north island">
+
+        <div className="north-island img-fluid rounded float-end">
           <img src="/images/north_island.png" alt="north-island-link"/>
         </div>
-        <div className="south island">
+        <div className="container">
+          <p>agsdrvsdrvsdrv sdbrsd rbvsdr bsdr b sdrb dsrb dsr bsdr b sdrb sdr b sdrb sdr bsdr bs drb sdr bsdr bsd rb sdrb sd bdsr bdsr bds rb dsrb sdr bsdr bsd rb dsrb sdrb sdb dsr bdsr bsd rb sdrb</p>
+        </div>
+        <div className="south-island img-fluid rounded float-end">
           <img src="/images/south_island.png" alt="south-island-link"/>
         </div>
         <ul>
