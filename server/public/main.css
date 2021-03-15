@@ -4,8 +4,37 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-/*# sourceMappingURL=styles.css.map*/
-
 .logo {
-  max-height: 10rem;
+  max-height: 6em;
+  margin-top: 1em;
+  margin-right: 1em;
 }
+
+.north-island {
+  margin-left: 100em;
+}
+
+.south-island {
+  margin-right: 15em;
+}
+
+@media all and (max-width: 756px) {
+  .north-island, .south-island {
+    margin-left: 0em;
+    margin-right: 0em;
+    align-items: center;
+  }
+}
+
+.search-bar {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
