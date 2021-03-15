@@ -10,13 +10,13 @@ body {
   margin-right: 1em;
 }
 
-.north-island {
+/* .north-island {
   margin-left: 100em;
 }
 
 .south-island {
   margin-right: 15em;
-}
+} */
 
 @media all and (max-width: 756px) {
   .north-island, .south-island {
@@ -30,6 +30,18 @@ body {
   margin-top: 1em;
 }
 
+.about-nz {
+  max-width: 400px;
+  max-height: 400px;
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+/* @media all and (max-width: 996px) {
+  .col-sm-5, .about-nz {
+    visibility: hidden;
+  }
+} */
 
 
 
