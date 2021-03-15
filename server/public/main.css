@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap);
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+  max-height: 7em;
+}
+
+.north-island {
+  margin-left: 100em;
+}
+
+.south-island {
+  margin-right: 9em;
+}
