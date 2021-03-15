@@ -11,7 +11,7 @@ function App (props) {
   return (
     <>
       <div className='app'>
-        <div className="container">
+        <div className="container-fluid">
           <img src="/images/logo.png" alt="app-logo" className="logo"/>
         </div>
 
@@ -26,10 +26,10 @@ function App (props) {
           </form>
         </div>
 
-        <div className="north-island img-fluid rounded float-end">
+        <div className="north-island float-end">
           <img src="/images/north_island.png" alt="north-island-link"/>
         </div>
-        <div className="container south-island img-fluid rounded float-end">
+        <div className="south-island float-end">
           <img src="/images/south_island.png" alt="south-island-link"/>
         </div>
         <ul>

@@ -5,7 +5,7 @@ body {
 }
 
 .logo {
-  max-height: 7em;
+  max-height: 6em;
 }
 
 .north-island {
@@ -13,5 +13,13 @@ body {
 }
 
 .south-island {
-  margin-right: 9em;
+  margin-right: 15em;
+}
+
+@media all and (max-width: 756px) {
+  .north-island, .south-island {
+    margin-left: 0em;
+    margin-right: 0em;
+    align-items: center;
+  }
 }
