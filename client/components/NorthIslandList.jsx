@@ -5,14 +5,12 @@ function NorthIslandList ({ hawkesBay }) {
   return (
     <>
       <h1>North Island</h1>
-      {/* <ul>
-    {hawkesBay.map(day => (
-      <>
-        <li>{day.date}</li>
-        <li>{day.maxtempC} Degrees Celcius</li>
-      </>
-    ))}
-  </ul> */}
+      <ul>
+        <li>Waimarama Beach</li>
+        <li>Ocean Beach</li>
+        <li>Waipatiki Beach</li>
+        <li>Te Awanga Point</li>
+      </ul>
     </>
   )
 }
