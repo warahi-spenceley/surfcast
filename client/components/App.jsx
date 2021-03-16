@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { getWaimaramaData } from '../apis/wwo'
+import { getWaimaramaData } from '../apis/hawkesBay'
 
 // import { fetchFruits } from '../actions'
 
