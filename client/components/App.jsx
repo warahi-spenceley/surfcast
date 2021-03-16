@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchFruits } from '../actions'
+import { getWaimaramaData } from '../apis/wwo'
+
+// import { fetchFruits } from '../actions'
 
 function App (props) {
-  useEffect(() => {
-    props.dispatch(fetchFruits())
-  }, [])
+  // useEffect(() => {
+  //   props.dispatch(fetchFruits())
+  // }, [])
 
   return (
     <>
@@ -46,18 +48,18 @@ function App (props) {
           </div>
         </div>
 
-        <ul>
+        {/* <ul>
           {props.fruits.map(fruit => (
             <li key={fruit}>{fruit}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </>
   )
 }
 const mapStateToProps = (globalState) => {
   return {
-    fruits: globalState.fruits
+    // fruits: globalState.fruits
   }
 }
 
