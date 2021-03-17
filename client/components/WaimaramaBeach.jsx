@@ -14,41 +14,41 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
         <tr>
           {waimarama.map(day => (
             <>
-              <td>{day.date}</td>
+            <tr>
+            <td>{day.date}</td>
+            </tr>
               {day.hourly.map(hour => (
                 <>
                   <tr>
-                    <td>{hour.swellHeight_ft} ft</td>
+                    <td>Time: {hour.time}</td>
                   </tr>
+                  <tr>
+                    <td>{hour.swellHeight_ft} ft</td>
+                    <td>{hour.swellDir16Point}</td>
+                    <td>{hour.swellDir}&#176;</td>
+                    <td>{hour.swellPeriod_secs}s</td>
+                    <td>{hour.sigHeight_m}m</td>
+                  </tr>
+                  <tr>
+                    <td>{hour.winddir16Point}</td>
+                    <td>{hour.winddirDegree}&#176;</td>
+                    <td>{hour.windspeedKmph} k/ph</td>
+                    <td>{hour.WindGustKmph} k/ph</td>
+                  </tr>
+                  {hour.weatherDesc.map(desc => (
+                    <tr>{desc.value}</tr>
+                  ))}
+                  {hour.weatherIconUrl.map(icon => (
+                    <tr>
+                      <img src={icon.value} alt="weather icon"></img>
+                    </tr>
+                  ))}
                 </>
               ))}
             </>
           ))}
         </tr>
       </table>
-
-      {/* <ul>
-        {waimarama.map(day => (
-          <>
-            <li>Date: {day.date}</li>
-            <li>Max temp: {day.maxtempC}&#176;</li>
-
-            {day.astronomy.map(astroData => (
-              <>
-                <li>Sunrise: {astroData.sunrise}</li>
-                <li>Sunset: {astroData.sunset}</li>
-              </>
-            ))}
-
-            {day.hourly.map(hourlyData => (
-              <>
-                <li>Time: {hourlyData.time}</li>
-                <li>Windspeed: {hourlyData.windspeedKmph} km/h</li>
-              </>
-            ))}
-          </>
-        ))}
-      </ul> */}
     </>
   )
 }
