@@ -3,16 +3,32 @@ import { connect } from 'react-redux'
 
 import { fetchWaimaramaData } from '../actions/hawkesBay'
 
-function WaimaramaBeach ({ dispatch, hawkesBay }) {
+function WaimaramaBeach ({ dispatch, waimarama }) {
   useEffect(() => {
     dispatch(fetchWaimaramaData())
   }, [])
   return (
     <>
-      {console.log(hawkesBay)}
       <h1>Waimarama Beach</h1>
-      <ul>
-        {hawkesBay.map(day => (
+      <table>
+        <tr>
+          {waimarama.map(day => (
+            <>
+              <td>{day.date}</td>
+              {day.hourly.map(hour => (
+                <>
+                  <tr>
+                    <td>{hour.swellHeight_ft} ft</td>
+                  </tr>
+                </>
+              ))}
+            </>
+          ))}
+        </tr>
+      </table>
+
+      {/* <ul>
+        {waimarama.map(day => (
           <>
             <li>Date: {day.date}</li>
             <li>Max temp: {day.maxtempC}&#176;</li>
@@ -32,14 +48,14 @@ function WaimaramaBeach ({ dispatch, hawkesBay }) {
             ))}
           </>
         ))}
-      </ul>
+      </ul> */}
     </>
   )
 }
 
 function mapStateToProps (globalState) {
   return {
-    hawkesBay: globalState.hawkesBay
+    waimarama: globalState.hawkesBay
   }
 }
 
