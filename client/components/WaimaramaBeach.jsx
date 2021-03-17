@@ -29,14 +29,13 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
                 </tr>
               </>
             ))}
-
-            {day.tides.map(tides => (
-              tides.tide_data.map(tidesData => (
-                <>
                   <tr>
                     <th>Tides</th>
                     <th></th>
                   </tr>
+            {day.tides.map(tides => (
+              tides.tide_data.map(tidesData => (
+                <>
                   <tr>
                     <td>{tidesData.tideTime}</td>
                     <td>{tidesData.tide_type}</td>
@@ -45,8 +44,6 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
               ))
             ))}
 
-            {day.hourly.map(hour => (
-              <>
                 <tr>
                   <th>Time</th>
                   <th>Swell</th>
@@ -61,13 +58,17 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
                   <th>water&#176;</th>
 
                 </tr>
+
+            {day.hourly.map(hour => (
+              <>
+
                 <tr>
                   <td>{hour.time}</td>
                   <td>{hour.swellHeight_ft} ft</td>
                   <td>{hour.swellDir16Point}</td>
                   <td>{hour.swellDir}&#176;</td>
                   <td>{hour.swellPeriod_secs}s</td>
-
+                  
                   <td>{hour.winddir16Point}</td>
                   <td>{hour.winddirDegree}&#176;</td>
                   <td>{hour.windspeedKmph}k/ph</td>
