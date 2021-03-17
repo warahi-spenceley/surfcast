@@ -14,13 +14,20 @@ function WaimaramaBeach ({ dispatch, hawkesBay }) {
       <ul>
         {hawkesBay.map(day => (
           <>
-            <li>{day.date}</li>
-            <li>{day.maxtempC} Degrees Celcius</li>
+            <li>Date: {day.date}</li>
+            <li>Max temp: {day.maxtempC}&#176;</li>
 
-            {day.astronomy.map(data => (
+            {day.astronomy.map(astroData => (
               <>
-                <li>{data.sunrise}</li>
-                <li>{data.sunset}</li>
+                <li>Sunrise: {astroData.sunrise}</li>
+                <li>Sunset: {astroData.sunset}</li>
+              </>
+            ))}
+
+            {day.hourly.map(hourlyData => (
+              <>
+                <li>Time: {hourlyData.time}</li>
+                <li>Windspeed: {hourlyData.windspeedKmph} km/h</li>
               </>
             ))}
           </>
