@@ -9,12 +9,20 @@ function WaimaramaBeach ({ dispatch, hawkesBay }) {
   }, [])
   return (
     <>
+      {console.log(hawkesBay)}
       <h1>Waimarama Beach</h1>
       <ul>
         {hawkesBay.map(day => (
           <>
             <li>{day.date}</li>
             <li>{day.maxtempC} Degrees Celcius</li>
+
+            {day.astronomy.map(data => (
+              <>
+                <li>{data.sunrise}</li>
+                <li>{data.sunset}</li>
+              </>
+            ))}
           </>
         ))}
       </ul>

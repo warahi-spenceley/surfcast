@@ -1,4 +1,4 @@
-import { getWaimaramaData, getOceanData, getWaipatikiData, getTeAwangaData } from '../apis/hawkesBay'
+import { getWaimaramaData } from '../apis/hawkesBay'
 
 export const SET_WAIMARAMA = 'SET_WAIMARAMA'
 

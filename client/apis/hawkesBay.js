@@ -13,24 +13,24 @@ export function getWaimaramaData () {
     })
 }
 
-export function getOceanData () {
-  const coors = '&q=-39.743167,177.0099003'
-  return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
-    .then(res => {
-      return res.body.data.weather
-    })
-}
-export function getWaipatikiData () {
-  const coors = '&q=-39.3001521,176.97404'
-  return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
-    .then(res => {
-      return res.body.data.weather
-    })
-}
-export function getTeAwangaData () {
-  const coors = '&q=-39.6143705,176.9592222'
-  return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
-    .then(res => {
-      return res.body.data.weather
-    })
-}
+// export function getOceanData () {
+//   const coors = '&q=-39.743167,177.0099003'
+//   return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
+//     .then(res => {
+//       return res.body.data.weather
+//     })
+// }
+// export function getWaipatikiData () {
+//   const coors = '&q=-39.3001521,176.97404'
+//   return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
+//     .then(res => {
+//       return res.body.data.weather
+//     })
+// }
+// export function getTeAwangaData () {
+//   const coors = '&q=-39.6143705,176.9592222'
+//   return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
+//     .then(res => {
+//       return res.body.data.weather
+//     })
+// }
