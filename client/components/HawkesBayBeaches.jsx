@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchWaimaramaData, fetchWaipatikiData } from '../actions/hawkesBay'
+import { fetchWaimaramaForecast, fetchWaipatikiForecast } from '../actions/hawkesBayForecast'
 
-function HawkesBayBeaches ({ dispatch, forecast }) {
-  const [beach, setBeach] = useState({
-    waimarama: true,
-    waipatiki: false
-  })
+function HawkesBayBeaches ({ dispatch, forecast, waimarama }) {
+  // const [beach, setBeach] = useState({
+  //   waimarama: true,
+  //   waipatiki: false
+  // })
   useEffect(() => {
-    if (beach.waimarama) {
-      dispatch(fetchWaimaramaData())
-    } else if (beach.waipatiki) {
-      dispatch(fetchWaipatikiData())
+    if (waimarama) {
+      dispatch(fetchWaimaramaForecast())
+    } else if (waipatiki) {
+      dispatch(fetchWaipatikiForecast())
     }
   }, [])
   return (
     <>
-      {beach.waimarama === true && (
+      {waimarama === true && (
         <h1>Waimarama Beach</h1>
       )}
 
-      {beach.waipatiki === true && (
+      {/* {waipatiki === true && (
         <h1>Waipatiki Beach</h1>
-      )}
+      )} */}
 
       <table>
         {forecast.map(day => (
@@ -108,7 +108,8 @@ function HawkesBayBeaches ({ dispatch, forecast }) {
 
 function mapStateToProps (globalState) {
   return {
-    forecast: globalState.hawkesBay
+    forecast: globalState.hawkesBayForecast,
+    waimarama: globalState.waimarama
   }
 }
 

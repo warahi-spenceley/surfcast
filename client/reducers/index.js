@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 
-import hawkesBay from './hawkesBay'
+import hawkesBayForecast from './hawkesBayForecast'
+import waimarama from './waimarama'
 
 export default combineReducers({
-  hawkesBay
+  hawkesBayForecast,
+  waimarama
 })
