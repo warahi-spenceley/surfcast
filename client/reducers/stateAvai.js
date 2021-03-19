@@ -23,7 +23,7 @@ const reducer = (state = initialState, action) => {
       return {
         teawanga: action.stateAvai
       }
-      
+
     // Wellington
     case SET_LYALLBAY:
       return {

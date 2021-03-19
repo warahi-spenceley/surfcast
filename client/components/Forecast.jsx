@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchWaimaramaForecast, fetchWaipatikiForecast, fetchOceanbeachForecast, fetchTeawangaForecast } from '../actions/hawkesBayForecast'
+import { fetchWaimaramaForecast, fetchWaipatikiForecast, fetchOceanbeachForecast, fetchTeawangaForecast } from '../actions/hawkesbayForecast'
 
 import { fetchLyallbayForecast } from '../actions/wellingtonForecast'
 
@@ -13,20 +13,23 @@ function Forecast ({
   lyallbay
 }) {
   useEffect(() => {
+    // Hawke's Bay
     if (waimarama) {
       dispatch(fetchWaimaramaForecast())
     } else if (waipatiki) {
       dispatch(fetchWaipatikiForecast())
-    } else if (lyallbay) {
-      dispatch(fetchLyallbayForecast())
     } else if (oceanbeach) {
       dispatch(fetchOceanbeachForecast())
     } else if (teawanga) {
       dispatch(fetchTeawangaForecast())
+    // Wellington
+    } else if (lyallbay) {
+      dispatch(fetchLyallbayForecast())
     }
   }, [])
   return (
     <>
+      {/* Hawke's Bay */}
       {waimarama === true && (
         <h1>Waimarama Beach</h1>
       )}
@@ -39,6 +42,7 @@ function Forecast ({
       {teawanga === true && (
         <h1>Te Awanga Point</h1>
       )}
+      {/* Wellington */}
       {lyallbay === true && (
         <h1>Lyall Bay</h1>
       )}

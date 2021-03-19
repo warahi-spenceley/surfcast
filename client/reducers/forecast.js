@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
 
     case SET_TEAWANGA_FORECAST:
       return action.data
-      
+
     // Wellington
     case SET_LYALLBAY_FORECAST:
       return action.data

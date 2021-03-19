@@ -1,4 +1,4 @@
-import { getWaimaramaData, getWaipatikiData, getOceanbeachData, getTeAwangaData } from '../apis/hawkesBay'
+import { getWaimaramaData, getWaipatikiData, getOceanbeachData, getTeAwangaData } from '../apis/hawkesbay'
 
 export const SET_WAIMARAMA_FORECAST = 'SET_WAIMARAMA_FORECAST'
 export const SET_WAIPATIKI_FORECAST = 'SET_WAIPATIKI_FORECAST'

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { setWaimarama, setWaipatiki, setOceanbeach, setTeawanga } from '../actions/hawkesbayPlaces'
 
 function HawkesBay ({ dispatch }) {
-
   function handleWaimaramaClick () {
     dispatch(setWaimarama(true))
   }
