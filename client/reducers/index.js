@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux'
 
-import hawkesBayForecast from './hawkesBayForecast'
-import hawkesBayBeaches from './hawkesBayBeaches'
-import wellingtonForecast from './wellingtonForecast'
-import wellingtonSpots from './wellingtonSpots'
+import forecast from './forecast'
+import stateAvai from './stateAvai'
 
 export default combineReducers({
-  hawkesBayForecast,
-  hawkesBayBeaches,
-  wellingtonForecast,
-  wellingtonSpots
+  forecast,
+  stateAvai
 })
