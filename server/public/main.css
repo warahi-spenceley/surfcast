@@ -10,13 +10,10 @@ body {
   margin-right: 1em;
 }
 
-/* .north-island {
-  margin-left: 100em;
+h1 {
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
 }
-
-.south-island {
-  margin-right: 15em;
-} */
 
 @media all and (max-width: 756px) {
   .north-island, .south-island {

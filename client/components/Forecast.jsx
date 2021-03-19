@@ -47,7 +47,7 @@ function Forecast ({
         <h1>Lyall Bay</h1>
       )}
 
-      <table className="table table-light">
+      <table className="table table-light ">
         {forecast.map(day => (
           <React.Fragment key={day.date}>
             <thead>
@@ -55,12 +55,11 @@ function Forecast ({
                 <th>{day.date}</th>
               </tr>
             </thead>
-
             {day.astronomy.map(astro => (
               <React.Fragment key={astro.sunrise}>
                 <thead>
                   <tr>
-                    <th>Sunrise</th>
+                    <th>Sunrise{astro.sunrise}</th>
                     <th>Sunset</th>
                   </tr>
                 </thead>
@@ -83,8 +82,8 @@ function Forecast ({
                 <React.Fragment key={tidesData.tideTime}>
                   <tfoot>
                     <tr>
-                      <td>{tidesData.tideTime}</td>
                       <td>{tidesData.tide_type}</td>
+                      <td>{tidesData.tideTime}</td>
                     </tr>
                   </tfoot>
                 </React.Fragment>
@@ -102,6 +101,7 @@ function Forecast ({
                 <th></th>
                 <th>temp&#176;</th>
                 <th>water&#176;</th>
+                <th></th>
               </tr>
             </thead>
             {day.hourly.map(hour => (
