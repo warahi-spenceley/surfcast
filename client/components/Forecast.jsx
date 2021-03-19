@@ -47,81 +47,89 @@ function Forecast ({
         <h1>Lyall Bay</h1>
       )}
 
-      <table>
+      <table className="table table-light">
         {forecast.map(day => (
-          <>
-            <tr>
-              <th>{day.date}</th>
-            </tr>
+          <React.Fragment key={day.date}>
+            <thead>
+              <tr>
+                <th>{day.date}</th>
+              </tr>
+            </thead>
 
             {day.astronomy.map(astro => (
-              <>
-                <tr>
-                  <th>Sunrise</th>
-                  <th>Sunset</th>
-                </tr>
-                <tr>
-                  <td>{astro.sunrise}</td>
-                  <td>{astro.sunset}</td>
-                </tr>
-              </>
+              <React.Fragment key={astro.sunrise}>
+                <thead>
+                  <tr>
+                    <th>Sunrise</th>
+                    <th>Sunset</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <td>{astro.sunrise}</td>
+                    <td>{astro.sunset}</td>
+                  </tr>
+                </tfoot>
+              </React.Fragment>
             ))}
-            <tr>
-              <th>Tides</th>
-              <th></th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Tides</th>
+                <th></th>
+              </tr>
+            </thead>
             {day.tides.map(tides => (
               tides.tide_data.map(tidesData => (
-                <>
-                  <tr>
-                    <td>{tidesData.tideTime}</td>
-                    <td>{tidesData.tide_type}</td>
-                  </tr>
-                </>
+                <React.Fragment key={tidesData.tideTime}>
+                  <tfoot>
+                    <tr>
+                      <td>{tidesData.tideTime}</td>
+                      <td>{tidesData.tide_type}</td>
+                    </tr>
+                  </tfoot>
+                </React.Fragment>
               ))
             ))}
-
-            <tr>
-              <th>Time</th>
-              <th>Swell</th>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th>Wind</th>
-              <th></th>
-              <th></th>
-
-              <th>temp&#176;</th>
-              <th>water&#176;</th>
-
-            </tr>
-
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Swell</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Wind</th>
+                <th></th>
+                <th></th>
+                <th>temp&#176;</th>
+                <th>water&#176;</th>
+              </tr>
+            </thead>
             {day.hourly.map(hour => (
-              <>
-
-                <tr>
-                  <td>{hour.time}</td>
-                  <td>{hour.swellHeight_ft} ft</td>
-                  <td>{hour.swellDir16Point}</td>
-                  <td>{hour.swellDir}&#176;</td>
-                  <td>{hour.swellPeriod_secs}s</td>
-
-                  <td>{hour.winddir16Point}</td>
-                  <td>{hour.winddirDegree}&#176;</td>
-                  <td>{hour.windspeedKmph}k/ph</td>
-
-                  <td>{hour.tempC}&#176;</td>
-                  <td>{hour.waterTemp_C}&#176;</td>
-
-                  {hour.weatherIconUrl.map(icon => (
-                    <td>
-                      <img src={icon.value} alt="weather icon"></img>
-                    </td>
-                  ))}
-                </tr>
-              </>
+              <React.Fragment key={hour.time}>
+                <tfoot>
+                  <tr>
+                    <td>{hour.time}</td>
+                    <td>{hour.swellHeight_ft} ft</td>
+                    <td>{hour.swellDir16Point}</td>
+                    <td>{hour.swellDir}&#176;</td>
+                    <td>{hour.swellPeriod_secs}s</td>
+                    <td>{hour.winddir16Point}</td>
+                    <td>{hour.winddirDegree}&#176;</td>
+                    <td>{hour.windspeedKmph}k/ph</td>
+                    <td>{hour.tempC}&#176;</td>
+                    <td>{hour.waterTemp_C}&#176;</td>
+                    {hour.weatherIconUrl.map(icon => (
+                      <React.Fragment key={icon.value}>
+                        <td>
+                          <img src={icon.value} alt="weather icon" width="40" height="40"></img>
+                        </td>
+                      </React.Fragment>
+                    ))}
+                  </tr>
+                </tfoot>
+              </React.Fragment>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </table>
     </>
