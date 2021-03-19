@@ -53,25 +53,25 @@ function Forecast ({
             <h5>{day.date}</h5>
             {day.astronomy.map(astro => (
               <React.Fragment key={astro.sunrise}>
-                <table className="table table-info">
+                <table className="table table-light table-hover">
                   <thead>
-                    <tr>
+                    <tr className="table-danger">
                       <th>Sunrise</th>
                       <th>Sunset</th>
                     </tr>
                   </thead>
-                  <tfoot>
+                  <tbody className="table table-hover">
                     <tr>
                       <td>{astro.sunrise}</td>
                       <td>{astro.sunset}</td>
                     </tr>
-                  </tfoot>
+                  </tbody>
                 </table>
               </React.Fragment>
             ))}
-            <table className="table table-info">
+            <table className="table table-light table-hover">
               <thead>
-                <tr>
+                <tr className="table table-info">
                   <th>Tides</th>
                   <th></th>
                 </tr>
@@ -79,19 +79,19 @@ function Forecast ({
               {day.tides.map(tides => (
                 tides.tide_data.map(tidesData => (
                   <React.Fragment key={tidesData.tideTime}>
-                    <tfoot>
+                    <tbody className="table table-hover">
                       <tr>
                         <td>{tidesData.tide_type}</td>
                         <td>{tidesData.tideTime}</td>
                       </tr>
-                    </tfoot>
+                    </tbody>
                   </React.Fragment>
                 ))
               ))}
             </table>
-            <table className="table table-info">
+            <table className="table table-light table-hover">
               <thead>
-                <tr>
+                <tr className="table-warning">
                   <th>Time</th>
                   <th>Swell</th>
                   <th></th>
@@ -107,7 +107,7 @@ function Forecast ({
               </thead>
               {day.hourly.map(hour => (
                 <React.Fragment key={hour.time}>
-                  <tfoot>
+                  <tbody className="table table-hover">
                     <tr>
                       <td>{hour.time}</td>
                       <td>{hour.swellHeight_ft} ft</td>
@@ -127,7 +127,7 @@ function Forecast ({
                         </React.Fragment>
                       ))}
                     </tr>
-                  </tfoot>
+                  </tbody>
                 </React.Fragment>
               ))}
             </table>
