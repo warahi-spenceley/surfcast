@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Home from './Home'
 import NorthIslandList from './NorthIslandList'
 import SouthIslandList from './SouthIslandList'
-import Hawkesbay from './Hawkesbay'
+import HawkesBay from './HawkesBay'
 import Forecast from './Forecast'
 import Wellington from './Wellington'
 
@@ -22,7 +22,7 @@ function App () {
 
         <Route path="/northisland/wellington/lyallbay" component={Forecast} />
 
-        <Route path="/northisland/hawkesbay" component={Hawkesbay} />
+        <Route path="/northisland/hawkesbay" component={HawkesBay} />
         <Route path="/northisland/wellington" component={Wellington} />
 
         <Route path="/northisland" component={NorthIslandList} />
