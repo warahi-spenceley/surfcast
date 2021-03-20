@@ -64,12 +64,12 @@ function Forecast ({
 
           {forecast.map(day => (
             <React.Fragment key={day.date}>
-              <h4>{new Date(day.date).toLocaleString('en-us', { weekday: 'long' })}</h4>
+              <h4 className="hour-day-name">{new Date(day.date).toLocaleString('en-us', { weekday: 'long' })}</h4>
 
               {day.astronomy.map(astro => (
                 <React.Fragment key={astro.sunrise}>
-                  <div className="col-sm-2">
-                    <table className="sun-table table table-light table-hover table-borderless border border-3 table-sm table">
+                  <div className="col-sm-3">
+                    <table className="table table-light table-hover table-borderless border border-3 table-sm table">
                       <thead>
                         <tr className="table-warning">
                           <th>Sunrise</th>
@@ -78,8 +78,8 @@ function Forecast ({
                       </thead>
                       <tbody>
                         <tr>
-                          <td>{astro.sunrise}</td>
-                          <td>{astro.sunset}</td>
+                          <td><small>{astro.sunrise}</small></td>
+                          <td><small>{astro.sunset}</small></td>
                         </tr>
                       </tbody>
                       <thead>
@@ -90,7 +90,7 @@ function Forecast ({
                       </thead>
                       <tbody>
                         <tr>
-                          <td>{day.uvIndex}</td>
+                          <td><small>{day.uvIndex}</small></td>
                           <td></td>
                         </tr>
                       </tbody>
@@ -105,8 +105,8 @@ function Forecast ({
                           <React.Fragment key={tidesData.tideTime}>
                             <tbody>
                               <tr>
-                                <td>{tidesData.tide_type}</td>
-                                <td>{tidesData.tideTime}</td>
+                                <td><small>{tidesData.tide_type}</small></td>
+                                <td><small>{tidesData.tideTime}</small></td>
                               </tr>
                             </tbody>
                           </React.Fragment>
@@ -117,10 +117,12 @@ function Forecast ({
                 </React.Fragment>
               ))}
               <div className="col-sm-7">
-                <table className="hour-table table table-light table-hover table-borderless border border-3 table-sm">
+                <table className="table table-light table-hover table-borderless border border-3 table-sm">
                   <thead>
                     <tr className="table table-secondary">
-                      <th className="table-primary"></th>
+                      <th>
+                        <img src="/images/logo.png" className="table-logo" alt="logo"></img>
+                      </th>
                       <th className="table-primary">Swell</th>
                       <th className="table-primary"></th>
                       <th className="table-primary"></th>
@@ -129,22 +131,22 @@ function Forecast ({
                       <th className="table-success"></th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
-                      <th className="table-success"></th>
-                      <th className="table-success"></th>
-                      <th className="table-success"></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
                     </tr>
                   </thead>
                   <thead>
                     <tr className="table table-secondary">
-                      <th>Time</th>
+                      <th>time</th>
                       <th>height</th>
-                      <th>Dir</th>
-                      <th>Deg</th>
-                      <th>Period</th>
-                      <th>Dir</th>
-                      <th>Deg</th>
-                      <th>Speed</th>
-                      <th>Gust</th>
+                      <th>dir</th>
+                      <th>deg</th>
+                      <th>period</th>
+                      <th>dir</th>
+                      <th>deg</th>
+                      <th>speed</th>
+                      <th>gust</th>
                       <th>temp&#176;</th>
                       <th>water&#176;</th>
                       <th></th>
@@ -156,15 +158,15 @@ function Forecast ({
                         <tr>
                           <td><small>{formatTimeShow(hour.time)}</small></td>
                           <td>{hour.swellHeight_ft}<small>ft</small></td>
-                          <td>{hour.swellDir16Point}</td>
-                          <td>{hour.swellDir}&#176;</td>
+                          <td><small>{hour.swellDir16Point}</small></td>
+                          <td><small>{hour.swellDir}&#176;</small></td>
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
-                          <td>{hour.winddir16Point}</td>
-                          <td>{hour.winddirDegree}&#176;</td>
-                          <td><small>{hour.windspeedKmph}k/ph</small></td>
-                          <td><small>{hour.WindGustKmph}k/ph</small></td>
-                          <td>{hour.tempC}&#176;</td>
-                          <td>{hour.waterTemp_C}&#176;</td>
+                          <td><small>{hour.winddir16Point}</small></td>
+                          <td><small>{hour.winddirDegree}&#176;</small></td>
+                          <td><small>{hour.windspeedKmph}kph</small></td>
+                          <td><small>{hour.WindGustKmph}kph</small></td>
+                          <td><small>{hour.tempC}&#176;</small></td>
+                          <td><small>{hour.waterTemp_C}&#176;</small></td>
                           {hour.weatherIconUrl.map(icon => (
                             <React.Fragment key={icon.value}>
                               <td>

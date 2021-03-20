@@ -34,22 +34,21 @@ h1 {
   margin-left: 1em;
 }
 
-/* .sun-table {
-
-}
-
-.tide-table {
-
-} */
-
-/* .hour-table {
-
-} */
-
 .weather-icon {
   padding: 0em!important;
 }
 
+.hour-day-name {
+  padding-left: 4em;
+  padding-top: 3em;
+  font-weight: bold;
+}
+
+.table-logo {
+  /* padding-left: 1em; */
+  height: 30px;
+  width: 30px;
+}
 
 
 

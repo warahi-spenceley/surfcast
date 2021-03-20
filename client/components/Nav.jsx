@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Nav () {
   return (
@@ -8,7 +9,7 @@ function Nav () {
         <div className="container-fluid">
           <div className="row">
             <div className="col-sm-1">
-              <img src="/images/logo.png" alt="app-logo" className="logo"/>
+              <Link to ="/"><img src="/images/logo.png" alt="app-logo" className="logo"/></Link>
             </div>
             <div className="col-sm-1">
             </div>

@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import Home from './Home'
 import NorthIslandList from './NorthIslandList'
 import SouthIslandList from './SouthIslandList'
-import HawkesBay from './HawkesBay'
 import Forecast from './Forecast'
-import Wellington from './Wellington'
 import Nav from './Nav'
 
 import { Switch, Route } from 'react-router-dom'
@@ -23,9 +21,6 @@ function App () {
         <Route path="/northisland/hawkesbay/teawanga" component={Forecast} />
 
         <Route path="/northisland/wellington/lyallbay" component={Forecast} />
-
-        <Route path="/northisland/hawkesbay" component={HawkesBay} />
-        <Route path="/northisland/wellington" component={Wellington} />
 
         <Route path="/northisland" component={NorthIslandList} />
         <Route path="/southisland" component={SouthIslandList} />
