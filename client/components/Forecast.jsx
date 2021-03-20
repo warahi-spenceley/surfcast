@@ -27,6 +27,16 @@ function Forecast ({
       dispatch(fetchLyallbayForecast())
     }
   }, [])
+  function formatTimeShow (hour24) {
+    if (hour24 === '0') return '0:00am'
+    else if (hour24 === '300') return '3:00am'
+    else if (hour24 === '600') return '6:00am'
+    else if (hour24 === '900') return '9:00am'
+    else if (hour24 === '1200') return '12:00am'
+    else if (hour24 === '1500') return '3:00am'
+    else if (hour24 === '1800') return '6:00am'
+    else if (hour24 === '2100') return '9:00am'
+  }
   return (
     <>
       {/* Hawke's Bay */}
@@ -49,9 +59,11 @@ function Forecast ({
 
       <div className="container-fluid">
         <div className="row">
+
           {forecast.map(day => (
             <React.Fragment key={day.date}>
-              <h5>{day.date}</h5>
+              <h4>{new Date(day.date).toLocaleString('en-us', { weekday: 'long' })}</h4>
+
               {day.astronomy.map(astro => (
                 <React.Fragment key={astro.sunrise}>
                   <div className="col-sm-2">
@@ -66,6 +78,18 @@ function Forecast ({
                         <tr>
                           <td>{astro.sunrise}</td>
                           <td>{astro.sunset}</td>
+                        </tr>
+                      </tbody>
+                      <thead>
+                        <tr className="table-danger">
+                          <th>UV Index</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{day.uvIndex}</td>
+                          <td></td>
                         </tr>
                       </tbody>
                       <thead>
@@ -90,7 +114,7 @@ function Forecast ({
                   </div>
                 </React.Fragment>
               ))}
-              <div className="col-sm-8">
+              <div className="col-sm-7">
                 <table className="hour-table table table-light table-hover table-borderless border border-3 table-sm">
                   <thead>
                     <tr className="table table-secondary">
@@ -111,7 +135,7 @@ function Forecast ({
                     <React.Fragment key={hour.time}>
                       <tbody>
                         <tr>
-                          <td>{hour.time}</td>
+                          <td><small>{formatTimeShow(hour.time)}</small></td>
                           <td>{hour.swellHeight_ft}<small>ft</small></td>
                           <td>{hour.swellDir16Point}</td>
                           <td>{hour.swellDir}&#176;</td>
