@@ -44,14 +44,26 @@ function Forecast ({
     } else return false
   }
 
+  function isWellington () {
+    if (lyallbay) {
+      return true
+    } else return false
+  }
+
   function hawkesbaySwellQuality (swelldeg) {
-    if (swelldeg > 32 && swelldeg < 123) {
+    if (swelldeg > 55 && swelldeg < 124) {
       return '/images/wind-and-swell/swell-good.png'
-    } else if (swelldeg > 122 && swelldeg < 169) {
-      return '/images/wind-and-swell/swell-mediocre.png'
-    } else if (swelldeg > 168 || swelldeg < 33) {
+    } else if (swelldeg > 11 && swelldeg > 169) {
       return '/images/wind-and-swell/swell-bad.png'
-    }
+    } else return '/images/wind-and-swell/swell-mediocre.png'
+  }
+
+  function wellingtonSwellQuality (swelldeg) {
+    if (swelldeg > 122 && swelldeg < 191) {
+      return '/images/wind-and-swell/swell-good.png'
+    } else if (swelldeg > 77 && swelldeg < 169) {
+      return '/images/wind-and-swell/swell-bad.png'
+    } else return '/images/wind-and-swell/swell-mediocre.png'
   }
 
   return (
@@ -177,7 +189,11 @@ function Forecast ({
                           {isHawkesbay() && (
                             <td><img src={hawkesbaySwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
                           )}
-                    
+
+                          {isWellington() && (
+                            <td><img src={wellingtonSwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
+                          )}
+
                           <td><small>{hour.swellDir16Point}</small></td>
                           <td><small>{hour.swellDir}&#176;</small></td>
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
