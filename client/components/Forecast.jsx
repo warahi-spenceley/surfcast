@@ -38,19 +38,13 @@ function Forecast ({
     else if (hour24 === '1800') return '6:00am'
     else if (hour24 === '2100') return '9:00am'
   }
-  // function locationn () {
-  //   let hawkesbay
-  //   if (waimarama || waipatiki || oceanbeach || teawanga) {
-  //     return hawkesbay = true
-  //   }
-  // }
+  function isHawkesbay () {
+    if (waimarama || waipatiki || oceanbeach || teawanga) {
+      return true
+    } else return false
+  }
 
   function hawkesbaySwellQuality (swelldeg) {
-    let hawkesbay = false
-    if (waimarama || waipatiki || oceanbeach || teawanga) {
-      hawkesbay = true
-    }
-
     if (swelldeg > 32 && swelldeg < 123) {
       return '/images/wind-and-swell/swell-good.png'
     } else if (swelldeg > 122 && swelldeg < 169) {
@@ -58,7 +52,6 @@ function Forecast ({
     } else if (swelldeg > 168 || swelldeg < 33) {
       return '/images/wind-and-swell/swell-bad.png'
     }
-    console.log(hawkesbay)
   }
 
   return (
@@ -180,7 +173,11 @@ function Forecast ({
                         <tr>
                           <td><small>{formatTimeShow(hour.time)}</small></td>
                           <td>{hour.swellHeight_ft}<small>ft</small></td>
-                          <td><img src={hawkesbaySwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
+
+                          {isHawkesbay() && (
+                            <td><img src={hawkesbaySwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
+                          )}
+                    
                           <td><small>{hour.swellDir16Point}</small></td>
                           <td><small>{hour.swellDir}&#176;</small></td>
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
