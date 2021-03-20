@@ -33,10 +33,10 @@ function Forecast ({
     else if (hour24 === '300') return '3:00am'
     else if (hour24 === '600') return '6:00am'
     else if (hour24 === '900') return '9:00am'
-    else if (hour24 === '1200') return '12:00am'
-    else if (hour24 === '1500') return '3:00am'
-    else if (hour24 === '1800') return '6:00am'
-    else if (hour24 === '2100') return '9:00am'
+    else if (hour24 === '1200') return '12:00pm'
+    else if (hour24 === '1500') return '3:00pm'
+    else if (hour24 === '1800') return '6:00pm'
+    else if (hour24 === '2100') return '9:00pm'
   }
   function isHawkesbay () {
     if (waimarama || waipatiki || oceanbeach || teawanga) {
@@ -166,9 +166,7 @@ function Forecast ({
                       <th></th>
                       <th></th>
                       <th></th>
-                      <th></th>
                       <th className="table-success">Wind</th>
-                      <th className="table-success"></th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
@@ -180,18 +178,16 @@ function Forecast ({
                   <thead>
                     <tr className="table table-secondary">
                       <th>12<small>hr</small></th>
-                      <th>height</th>
-                      <th>dir</th>
-                      <th></th>
-                      <th></th>
-                      <th>period</th>
-                      <th>dir</th>
-                      <th></th>
-                      <th></th>
-                      <th>speed</th>
-                      <th>gust</th>
-                      <th>land&#176;</th>
-                      <th>water&#176;</th>
+                      <th>Height</th>
+                      <th>Swell</th>
+                      <th>direction</th>
+                      <th>Period</th>
+                      <th>Wind</th>
+                      <th>direction</th>
+                      <th>Speed</th>
+                      <th>Gust</th>
+                      <th>Land&#176;</th>
+                      <th>Water&#176;</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -207,8 +203,7 @@ function Forecast ({
                           {isWellington() && (
                             <td><img src={wellingtonSwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
                           )}
-                          <td><small>{hour.swellDir16Point}</small></td>
-                          <td><small>{hour.swellDir}&#176;</small></td>
+                          <td><small>{hour.swellDir16Point} {hour.swellDir}&#176;</small></td>
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
                           {isHawkesbay() && (
                             <td><img src={hawkesbayWindQuality(hour.winddirDegree)} className="wind-quality-img"></img></td>
@@ -216,8 +211,7 @@ function Forecast ({
                           {isWellington() && (
                             <td><img src={wellingtonWindQuality(hour.winddirDegree)} className="wind-quality-img"></img></td>
                           )}
-                          <td><small>{hour.winddir16Point}</small></td>
-                          <td><small>{hour.winddirDegree}&#176;</small></td>
+                          <td><small>{hour.winddir16Point} {hour.winddirDegree}&#176;</small></td>
                           <td><small>{hour.windspeedKmph}kph</small></td>
                           <td><small>{hour.WindGustKmph}kph</small></td>
                           <td><small>{hour.tempC}&#176;</small></td>

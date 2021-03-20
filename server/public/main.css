@@ -13,6 +13,7 @@ body {
 h1 {
   text-align: center;
   font-family: 'Permanent Marker', cursive;
+  font-size: 375%;
 }
 
 @media all and (max-width: 756px) {
