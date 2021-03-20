@@ -215,7 +215,7 @@ function Forecast ({
                           )}
                           {isWellington() && (
                             <td><img src={wellingtonWindQuality(hour.winddirDegree)} className="wind-quality-img"></img></td>
-                          )}             
+                          )}
                           <td><small>{hour.winddir16Point}</small></td>
                           <td><small>{hour.winddirDegree}&#176;</small></td>
                           <td><small>{hour.windspeedKmph}kph</small></td>
