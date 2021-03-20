@@ -119,26 +119,24 @@ function Forecast ({
               <div className="col-sm-7">
                 <table className="table table-light table-hover table-borderless border border-3 table-sm">
                   <thead>
-                    <tr className="table table-secondary">
-                      <th>
-                        <img src="/images/logo.png" className="table-logo" alt="logo"></img>
-                      </th>
-                      <th className="table-primary">Swell</th>
-                      <th className="table-primary"></th>
-                      <th className="table-primary"></th>
-                      <th className="table-primary"></th>
+                    <tr className="table table-primary">
+                      <th className="table-info">Time</th>
+                      <th>Swell</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
                       <th className="table-success">Wind</th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
-                      <th></th>
-                      <th></th>
-                      <th></th>
+                      <th className="table-warning">temp&#176;</th>
+                      <th className="table-warning"></th>
+                      <th className="table-warning"></th>
                     </tr>
                   </thead>
                   <thead>
                     <tr className="table table-secondary">
-                      <th>time</th>
+                      <th>12<small>hr</small></th>
                       <th>height</th>
                       <th>dir</th>
                       <th>deg</th>
@@ -147,7 +145,7 @@ function Forecast ({
                       <th>deg</th>
                       <th>speed</th>
                       <th>gust</th>
-                      <th>temp&#176;</th>
+                      <th>land&#176;</th>
                       <th>water&#176;</th>
                       <th></th>
                     </tr>
