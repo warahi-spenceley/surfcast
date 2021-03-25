@@ -102,6 +102,10 @@ function Forecast ({
         <h1>Lyall Bay</h1>
       )}
 
+      <div className="seven-day-heading">
+        <h4>7 Day Forecast</h4>
+      </div>
+
       <div className="container-fluid">
         <div className="row">
           {forecast.map(day => (
@@ -136,7 +140,7 @@ function Forecast ({
                         </tr>
                       </tbody>
                       <thead>
-                        <tr className="table table-info">
+                        <tr className="table table-primary">
                           <th>Tides</th>
                           <th></th>
                         </tr>
@@ -178,12 +182,16 @@ function Forecast ({
                   <thead>
                     <tr className="table table-secondary">
                       <th>12<small>hr</small></th>
+                      <th>
+                        <img src="/images/compas.png" alt="compas-icon" className="table-compas"></img>
+                      </th>
                       <th>Height</th>
-                      <th>Swell</th>
-                      <th>direction</th>
+                      <th>Direction</th>
                       <th>Period</th>
-                      <th>Wind</th>
-                      <th>direction</th>
+                      <th>
+                        <img src="/images/compas.png" alt="compas-icon" className="table-compas"></img>
+                      </th>
+                      <th>Direction</th>
                       <th>Speed</th>
                       <th>Gust</th>
                       <th>Land&#176;</th>
@@ -196,13 +204,13 @@ function Forecast ({
                       <tbody>
                         <tr>
                           <td><small>{formatTimeShow(hour.time)}</small></td>
-                          <td>{hour.swellHeight_ft}<small>ft</small></td>
                           {isHawkesbay() && (
                             <td><img src={hawkesbaySwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
                           )}
                           {isWellington() && (
                             <td><img src={wellingtonSwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
                           )}
+                          <td>{hour.swellHeight_ft}<small>ft</small></td>
                           <td><small>{hour.swellDir16Point} {hour.swellDir}&#176;</small></td>
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
                           {isHawkesbay() && (
